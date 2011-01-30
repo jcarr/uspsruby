@@ -1,0 +1,6 @@
+<p>USPS Tracking</p>
+<%= form_tag(:track, :method => "get") do %>
+  <%= label_tag(:q, "Tracking number:") %>
+  <%= text_field_tag(:q, '', :size =>34 ) %>
+  <%= submit_tag("Track") %>
+<% end %>

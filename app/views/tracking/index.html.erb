@@ -1,0 +1,21 @@
+
+<table><tr style="background-color:#9999CC"><th width=180>date</th><th width=80>time</th><th width=150>location</th><th width=350>event</th></tr>
+
+<% 
+  color1 = "#CC9999"
+  color2 = "#9999CC"
+%>
+
+<% @tracking.results.each { |t| %>
+  <tr style="background-color:<%= color1 %>">
+  <% 
+    cityState = t.eventState == "??" ? "" : t.eventCity + ", " + t.eventState  
+    color1, color2 = color2, color1
+  %>
+  <td><%= t.eventDate %></td>
+  <td><%= t.eventTime %></td>
+  <td><%= cityState %></td>
+  <td><%= t.event %></td>
+</tr>
+<% } %>
+
